@@ -345,6 +345,7 @@ public class DLLTest {
 		sub_list = abc_list.subseqByTransfer(null, abc_list.getHead());
 	}
 
+  /* calls main to run the tests */
 	public static void main(String[] args) {
 
 	}

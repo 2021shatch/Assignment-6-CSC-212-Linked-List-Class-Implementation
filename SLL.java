@@ -35,6 +35,7 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 	 * Inserts the given item at the head of the list
 	 * 
 	 * @param v item to insert
+   * @return void N/A
 	 */
 	public void addFirst(T v) {
 		NodeSL<T> newNode = new NodeSL<>(v, head);
@@ -45,6 +46,7 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 	}
 
 	/**
+   * @param no parameters N/A
 	 * @return returns a string representation of the list
 	 */
 	public String toString() {
@@ -61,7 +63,7 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 
 	/**
 	 * Removes the given item from the head of the list
-	 * 
+	 * @param no parameters N/A
 	 * @return item that was removed
 	 */
 	public T removeFirst() {
@@ -84,6 +86,7 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 	 * Inserts the given item at the tail of the list
 	 * 
 	 * @param v item to insert
+   * @return void N/A
 	 */
 	public void addLast(T v) {
 		NodeSL<T> newNode = new NodeSL<T>(v, null);
@@ -95,7 +98,11 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 		}
 	}
 
-	/** Remove the item at the tail of the list */
+/**
+	 * Removes the given item from the tail of the list
+	 * @param no parameters N/A
+	 * @return item removed
+	 */
 	public T removeLast() {
 		// if list is empty
 		if (head == null) {
@@ -120,9 +127,11 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 	}
 
 	/**
-	 * Inserts the given item at after the given position
+	 * Inserts the given item after the specified node
 	 * 
-	 * @param v item to insert
+	 * @param here node to insert after
+	 * @param v    item to insert
+   * @return void N/A
 	 */
 	public void addAfter(NodeSL<T> here, T v) {
 		// if here is the tail
@@ -166,7 +175,11 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 
 	}
 
-	/** @return size of list */
+	/**
+	 * Returns a count of the number of elements in the list
+	 * @param no parameters N/A
+	 * @return current number of nodes
+	 */
 	public int size() {
 		NodeSL<T> temp = head;
 		int count = 0;
@@ -177,7 +190,9 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 		return count;
 	}
 
-	/** Copy constructor makes a deep copy of the list */
+	/** Copy constructor makes a deep copy of the list
+   *@param original list to be copied
+  */
 	public SLL(SLL<T> orig) {
 		// if the list is empty
 		if (orig.getHead() == null) {
@@ -197,7 +212,7 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 	 * Makes a copy of elements from the original list
 	 * 
 	 * @param here starting point of copy
-	 * @param n    number of items to copy
+	 * @param n number of items to copy
 	 * @return the copied list
 	 */
 	public SLL<T> subseqByCopy(NodeSL<T> here, int n) {
@@ -223,7 +238,7 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 	/**
 	 * Places copy of the provided list into this after the specified node.
 	 * 
-	 * @param list      the list to splice in a copy of
+	 * @param list the list to splice in a copy of
 	 * @param afterHere marks the position in this where the new list should go
 	 */
 	public void spliceByCopy(SLL<T> list, NodeSL<T> afterHere) {
@@ -290,7 +305,7 @@ public class SLL<T> implements Phase1SLL<T>, Phase2SLL<T>, Phase3SLL<T> {
 	 * Takes the provided list and inserts its elements into this after the
 	 * specified node. The inserted list ends up empty.
 	 * 
-	 * @param list      the list to splice in. Becomes empty after the call
+	 * @param list the list to splice in. Becomes empty after the call
 	 * @param afterHere Marks the place where the new elements are inserted
 	 */
 	public void spliceByTransfer(SLL<T> list, NodeSL<T> afterHere) {
